@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROJECT NOVA // ARCHEOLOGY ENGINE</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 3D Environment -->
+    <div id="canvas-container"></div>
+
+    <!-- Scanning Radar -->
+    <div id="scan-overlay"></div>
+
+    <!-- Science HUD Layer -->
+    <div id="hud">
+        <header>
+            <div class="mission-intel">
+                <div class="intel-label">SYSTEM SECTOR</div>
+                <div class="intel-val" id="sector-id">VOID-X // 000</div>
+            </div>
+            <div class="mission-intel" style="text-align: right;">
+                <div class="intel-label">DISCOVERY INDEX</div>
+                <div class="intel-val" id="discovery-count">00/???</div>
+            </div>
+        </header>
+
+        <!-- Dynamic Scan Readings -->
+        <aside id="scan-sidebar">
+            <div class="scan-card">
+                <div class="scan-label">ATMOSPHERIC COMPOSITION</div>
+                <div class="scan-item" id="data-atmo">SCANNING...</div>
+            </div>
+            <div class="scan-card">
+                <div class="scan-label">GEOLOGICAL PROFILE</div>
+                <div class="scan-item" id="data-geo">SCANNING...</div>
+            </div>
+            <div class="scan-card">
+                <div class="scan-label">CIVILIZATION PROBABILITY</div>
+                <div class="scan-item" id="data-prob">0.00%</div>
+            </div>
+        </aside>
+
+        <!-- Artifact Collection -->
+        <aside id="artifact-sidebar">
+            <div class="intel-label" style="margin-bottom: 20px;">RELIC VAULT</div>
+            <div class="artifact-slot" id="slot-0">?</div>
+            <div class="artifact-slot" id="slot-1">?</div>
+            <div class="artifact-slot" id="slot-2">?</div>
+            <div class="artifact-slot" id="slot-3">?</div>
+            <div class="artifact-slot" id="slot-4">?</div>
+        </aside>
+
+        <!-- Footer discovery logs -->
+        <footer>
+            <div id="discovery-log">
+                <div class="log-entry"><span>[SYS]</span> Initiating Project Nova...</div>
+                <div class="log-entry"><span>[SYS]</span> Linking to orbital sensors...</div>
+                <div class="log-entry"><span>[SYS]</span> Awaiting system seed.</div>
+            </div>
+            
+            <div class="nav-controls">
+                <button class="btn-nova" id="btn-jump">FTL JUMP</button>
+                <button class="btn-nova" id="btn-scan">DEEP SCAN</button>
+            </div>
+
+            <div style="text-align: right; font-family: 'Space Grotesk'; font-size: 10px; opacity: 0.3;">
+                V1.0 // PROCEDURAL_GENERATION_ACTIVE
+            </div>
+        </footer>
+    </div>
+
+    <div id="tooltip" class="planet-label">UNKNOWN OBJECT</div>
+
+    <!-- Dependencies -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.0/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/simplex-noise@2.4.0/simplex-noise.js"></script>
+    
+    <!-- Game Engine -->
+    <script src="nova.js"></script>
+</body>
+</html>
